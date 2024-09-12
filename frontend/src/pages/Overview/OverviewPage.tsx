@@ -826,7 +826,7 @@ export class OverviewPageComponent extends React.Component<OverviewProps, State>
           'data-test': `enable-${nsInfo.name}-namespace-sidecar-injection`,
           isGroup: false,
           isSeparator: false,
-          title: 'Enable Auto Injection',
+          title: '启用自动注入',
           action: (ns: string) =>
             this.setState({
               showTrafficPoliciesModal: true,
@@ -841,7 +841,7 @@ export class OverviewPageComponent extends React.Component<OverviewProps, State>
           'data-test': `disable-${nsInfo.name}-namespace-sidecar-injection`,
           isGroup: false,
           isSeparator: false,
-          title: 'Disable Auto Injection',
+          title: '禁止自动注入',
           action: (ns: string) =>
             this.setState({
               showTrafficPoliciesModal: true,
@@ -856,7 +856,7 @@ export class OverviewPageComponent extends React.Component<OverviewProps, State>
           'data-test': `remove-${nsInfo.name}-namespace-sidecar-injection`,
           isGroup: false,
           isSeparator: false,
-          title: 'Remove Auto Injection',
+          title: '删除自动注入',
           action: (ns: string) =>
             this.setState({
               showTrafficPoliciesModal: true,

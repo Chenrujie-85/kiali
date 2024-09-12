@@ -108,7 +108,7 @@ export const WorkloadWizardDropdown: React.FC<Props> = (props: Props) => {
           onClick={() => onAction(WIZARD_ENABLE_AUTO_INJECTION)}
           isDisabled={serverConfig.deployment.viewOnlyMode}
         >
-          Enable Auto Injection
+          启动自动注入
         </DropdownItem>
       );
 
@@ -129,7 +129,7 @@ export const WorkloadWizardDropdown: React.FC<Props> = (props: Props) => {
           onClick={() => onAction(WIZARD_DISABLE_AUTO_INJECTION)}
           isDisabled={serverConfig.deployment.viewOnlyMode}
         >
-          Disable Auto Injection
+          禁用自动注入
         </DropdownItem>
       );
 
@@ -150,7 +150,7 @@ export const WorkloadWizardDropdown: React.FC<Props> = (props: Props) => {
           onClick={() => onAction(WIZARD_REMOVE_AUTO_INJECTION)}
           isDisabled={serverConfig.deployment.viewOnlyMode}
         >
-          Remove Auto Injection
+          删除自动注入
         </DropdownItem>
       );
 
@@ -184,8 +184,8 @@ export const WorkloadWizardDropdown: React.FC<Props> = (props: Props) => {
           onClick={() => onWizardToggle(true)}
         >
           {serverConfig.kialiFeatureFlags.istioAnnotationAction && !serverConfig.deployment.viewOnlyMode
-            ? 'Edit Annotations'
-            : 'View Annotations'}
+            ? '编辑 Annotations'
+            : '查看 Annotations'}
         </DropdownItem>
       );
 
@@ -210,7 +210,7 @@ export const WorkloadWizardDropdown: React.FC<Props> = (props: Props) => {
           isExpanded={isActionsOpen}
           isDisabled={!validActions}
         >
-          Actions
+          操作
         </MenuToggle>
       )}
       isOpen={isActionsOpen}

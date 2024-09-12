@@ -205,11 +205,11 @@ export class TrafficShifting extends React.Component<Props, State> {
 
     const workloadColumns: ThProps[] = [
       {
-        title: 'Destination Workload',
+        title: '目的工作负载',
         width: 30
       },
       {
-        title: 'Traffic Weight',
+        title: '流量权重',
         width: 70
       }
     ];
@@ -310,7 +310,7 @@ export class TrafficShifting extends React.Component<Props, State> {
         {this.props.workloads.length > 1 && (
           <div className={evenlyButtonStyle}>
             <Button variant={ButtonVariant.link} icon={<KialiIcon.Equalizer />} onClick={() => this.resetState()}>
-              Evenly distribute traffic
+              平均分配网络流量
             </Button>{' '}
           </div>
         )}

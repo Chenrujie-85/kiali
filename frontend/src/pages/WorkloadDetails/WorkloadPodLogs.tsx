@@ -753,7 +753,7 @@ export class WorkloadPodLogsComponent extends React.Component<WorkloadPodLogsPro
                 <CopyToClipboard text={this.entriesToString(this.state.entries)}>
                   <Button variant={ButtonVariant.link} isInline>
                     <KialiIcon.Copy />
-                    <span className={iconStyle}>Copy</span>
+                    <span className={iconStyle}>复制</span>
                   </Button>
                 </CopyToClipboard>
               </Tooltip>
@@ -768,7 +768,7 @@ export class WorkloadPodLogsComponent extends React.Component<WorkloadPodLogsPro
                   isInline
                 >
                   <KialiIcon.Expand />
-                  <span className={iconStyle}>Expand</span>
+                  <span className={iconStyle}>展开</span>
                 </Button>
               </Tooltip>
             </ToolbarItem>

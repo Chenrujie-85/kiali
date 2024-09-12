@@ -45,15 +45,15 @@ export enum EdgeMode {
 
 export enum EdgeLabelMode {
   RESPONSE_TIME_AVERAGE = 'avg',
-  RESPONSE_TIME_GROUP = 'responseTime',
+  RESPONSE_TIME_GROUP = '响应时间',
   RESPONSE_TIME_P50 = 'rt50',
   RESPONSE_TIME_P95 = 'rt95',
   RESPONSE_TIME_P99 = 'rt99',
-  THROUGHPUT_GROUP = 'throughput',
-  THROUGHPUT_REQUEST = 'throughputRequest',
-  THROUGHPUT_RESPONSE = 'throughputResponse',
-  TRAFFIC_DISTRIBUTION = 'trafficDistribution',
-  TRAFFIC_RATE = 'trafficRate'
+  THROUGHPUT_GROUP = '吞吐量',
+  THROUGHPUT_REQUEST = '请求的吞吐量',
+  THROUGHPUT_RESPONSE = '响应的吞吐量',
+  TRAFFIC_DISTRIBUTION = '流量分布',
+  TRAFFIC_RATE = '流量速率'
 }
 
 export const isResponseTimeMode = (mode: EdgeLabelMode): boolean => {

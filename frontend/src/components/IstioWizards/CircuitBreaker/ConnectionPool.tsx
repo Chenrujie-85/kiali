@@ -13,7 +13,7 @@ export class ConnectionPool extends React.Component<Props> {
   render() {
     return (
       <>
-        <FormGroup label="Add Connection Pool" fieldId="cpSwitch">
+        <FormGroup label="添加连接池" fieldId="cpSwitch">
           <Switch
             id="cpSwitch"
             label={' '}
@@ -24,7 +24,7 @@ export class ConnectionPool extends React.Component<Props> {
           <span>{wizardTooltip(CONNECTION_POOL_TOOLTIP)}</span>
         </FormGroup>
         {this.props.isConnectionPool && (
-          <FormGroup label="Max Connections" fieldId="maxConnections">
+          <FormGroup label="最大连接数" fieldId="maxConnections">
             <TextInput
               value={this.props.connectionPool.tcp?.maxConnections}
               id="maxConnections"
@@ -42,13 +42,13 @@ export class ConnectionPool extends React.Component<Props> {
             />
             <FormHelperText>
               <HelperText>
-                <HelperTextItem>Maximum number of HTTP1 /TCP connections to a destination host</HelperTextItem>
+                <HelperTextItem>向目标主机建立的最大HTTP1/TCP连接数</HelperTextItem>
               </HelperText>
             </FormHelperText>
           </FormGroup>
         )}
         {this.props.isConnectionPool && (
-          <FormGroup label="HTTP1 Max Pending Requests" fieldId="http1MaxPendingRequests">
+          <FormGroup label="HTTP1最大请求挂起数" fieldId="http1MaxPendingRequests">
             <TextInput
               value={this.props.connectionPool.http?.http1MaxPendingRequests}
               id="http1MaxPendingRequests"
@@ -66,7 +66,7 @@ export class ConnectionPool extends React.Component<Props> {
             />
             <FormHelperText>
               <HelperText>
-                <HelperTextItem>Maximum number of pending HTTP requests to a destination.</HelperTextItem>
+                <HelperTextItem>向目标主机发送的被挂起的HTTP1请求的最大数量</HelperTextItem>
               </HelperText>
             </FormHelperText>
           </FormGroup>

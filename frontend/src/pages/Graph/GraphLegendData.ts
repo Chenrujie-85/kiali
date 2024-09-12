@@ -49,64 +49,64 @@ export interface GraphLegendItemRow {
 
 export const legendData: GraphLegendItem[] = [
   {
-    title: t('Node Shapes'),
+    title: t('节点形状'),
     data: [
-      { label: t('Workload'), icon: workloadImage },
-      { label: t('App'), icon: appImage },
-      { label: t('Operation'), icon: operationImage },
-      { label: t('Service'), icon: serviceImage },
-      { label: t('Service Entry'), icon: serviceEntryImage }
+      { label: t('工作负载'), icon: workloadImage },
+      { label: t('应用'), icon: appImage },
+      { label: t('操作'), icon: operationImage },
+      { label: t('服务'), icon: serviceImage },
+      { label: t('服务条目'), icon: serviceEntryImage }
     ]
   },
   {
-    title: t('Node Colors'),
+    title: t('节点颜色'),
     data: [
-      { label: t('Normal'), icon: nodeColorNormalImage },
-      { label: t('Warn'), icon: nodeColorWarningImage },
-      { label: t('Unhealthy'), icon: nodeColorDangerImage },
-      { label: t('Idle'), icon: nodeColorIdleImage }
+      { label: t('正常'), icon: nodeColorNormalImage },
+      { label: t('警告'), icon: nodeColorWarningImage },
+      { label: t('不健康'), icon: nodeColorDangerImage },
+      { label: t('空闲'), icon: nodeColorIdleImage }
     ]
   },
   {
-    title: t('Node Background'),
+    title: t('节点背景'),
     data: [
-      { label: t('Unselected Namespace'), icon: externalNamespaceImage },
-      { label: t('Restricted / External'), icon: restrictedNamespaceImage }
+      { label: t('未选择的命名空间'), icon: externalNamespaceImage },
+      { label: t('受限 / 外部'), icon: restrictedNamespaceImage }
     ]
   },
   {
-    title: t('Edges'),
+    title: t('边'),
     data: [
-      { label: t('Failure'), icon: edgeDangerImage },
-      { label: t('Degraded'), icon: edgeWarnImage },
-      { label: t('Healthy'), icon: edgeSuccessImage },
-      { label: t('TCP Connection'), icon: edgeTcpImage },
-      { label: t('Idle'), icon: edgeIdlemage },
-      { label: t('mTLS (badge)'), icon: edgeMtlsImage }
+      { label: t('错误'), icon: edgeDangerImage },
+      { label: t('已降级'), icon: edgeWarnImage },
+      { label: t('健康'), icon: edgeSuccessImage },
+      { label: t('TCP 连接'), icon: edgeTcpImage },
+      { label: t('空间'), icon: edgeIdlemage },
+      { label: t('mTLS (标志)'), icon: edgeMtlsImage }
     ]
   },
   {
-    title: t('Traffic Animation'),
+    title: t('流量动画'),
     data: [
-      { label: t('Normal Request'), icon: trafficNormalImage },
-      { label: t('Failed Request'), icon: trafficFailedImage },
-      { label: t('TCP Traffic'), icon: trafficTcpImage }
+      { label: t('正常请求'), icon: trafficNormalImage },
+      { label: t('失败请求'), icon: trafficFailedImage },
+      { label: t('TCP 流量'), icon: trafficTcpImage }
     ]
   },
   {
-    title: t('Node Badges'),
+    title: t('节点标志'),
     isBadge: true,
     data: [
-      { label: t('Circuit Breaker'), icon: badgeCircuitBreakerImage },
-      { label: t('Fault Injection'), icon: badgeFaultInjectionImage },
-      { label: t('Gateway'), icon: badgeGatewaysImage },
-      { label: t('Mirroring'), icon: badgeMirroringImage },
-      { label: t('Missing Sidecar'), icon: badgeMissingSidecarImage },
-      { label: t('Request Timeout'), icon: badgeRequestTimeoutImage },
-      { label: t('Traffic Shifting / TCP Traffic Shifting'), icon: badgeTrafficShiftingSourceImage },
-      { label: t('Traffic Source'), icon: badgeTrafficSourceImage },
-      { label: t('Virtual Service / Request Routing'), icon: badgeVirtualServicesImage },
-      { label: t('Workload Entry'), icon: badgeWorkloadEntryImage }
+      { label: t('熔断'), icon: badgeCircuitBreakerImage },
+      { label: t('故障注入'), icon: badgeFaultInjectionImage },
+      { label: t('网关'), icon: badgeGatewaysImage },
+      { label: t('镜像'), icon: badgeMirroringImage },
+      { label: t('边车丢失'), icon: badgeMissingSidecarImage },
+      { label: t('请求超时'), icon: badgeRequestTimeoutImage },
+      { label: t('流量转移 / TCP 流量转移'), icon: badgeTrafficShiftingSourceImage },
+      { label: t('流量来源'), icon: badgeTrafficSourceImage },
+      { label: t('虚拟服务 / 请求路由'), icon: badgeVirtualServicesImage },
+      { label: t('工作负载条目'), icon: badgeWorkloadEntryImage }
     ]
   }
 ];

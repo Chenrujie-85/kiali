@@ -9,13 +9,13 @@ export type RouteTimeoutProps = {
   onTimeout: (isTimeout: boolean, timeout: string) => void;
 };
 
-const timeoutMsg = 'Timeout for HTTP requests. Format: 1h/1m/1s/1ms. MUST be >=1ms.';
+const timeoutMsg = 'HTTP请求的超时时长 格式: 1h/1m/1s/1ms. 必须 >=1ms.';
 
 export class RouteTimeout extends React.Component<RouteTimeoutProps> {
   render() {
     return (
       <>
-        <FormGroup label="Add HTTP Timeout" fieldId="timeoutSwitch">
+        <FormGroup label="添加超时设置" fieldId="timeoutSwitch">
           <Switch
             id="timeoutSwitch"
             label={' '}
@@ -26,7 +26,7 @@ export class RouteTimeout extends React.Component<RouteTimeoutProps> {
           <span>{wizardTooltip(HTTP_TIMEOUT_TOOLTIP)}</span>
         </FormGroup>
         {this.props.isTimeout && (
-          <FormGroup label="Timeout" fieldId="timeout-value">
+          <FormGroup label="超时" fieldId="timeout-value">
             <TextInput
               value={this.props.timeout}
               type="text"

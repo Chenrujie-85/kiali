@@ -245,7 +245,7 @@ class GraphToolbarComponent extends React.PureComponent<GraphToolbarProps> {
             )}
 
             <ToolbarItem style={{ marginLeft: 'auto', alignSelf: 'center' }}>
-              <Tooltip key={'graph-tour-help-ot'} position={TooltipPosition.right} content="Shortcuts and tips...">
+              <Tooltip key={'graph-tour-help-ot'} position={TooltipPosition.right} content="快捷键和提示...">
                 <TourStop info={GraphTourStops.Shortcuts}>
                   <Button
                     id="graph-tour"
@@ -255,7 +255,7 @@ class GraphToolbarComponent extends React.PureComponent<GraphToolbarProps> {
                     isInline
                   >
                     <KialiIcon.Help />
-                    <span style={{ marginLeft: '5px' }}>Help</span>
+                    <span style={{ marginLeft: '5px' }}>帮助</span>
                   </Button>
                 </TourStop>
               </Tooltip>

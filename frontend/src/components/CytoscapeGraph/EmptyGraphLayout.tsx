@@ -118,16 +118,15 @@ export class EmptyGraphLayout extends React.Component<EmptyGraphLayoutProps, Emp
     if (isGraphEmpty && !this.props.isMiniGraph) {
       return (
         <EmptyState id="empty-graph" variant={EmptyStateVariant.lg} className={emptyStateStyle}>
-          <EmptyStateHeader titleText="Empty Graph" headingLevel="h5" />
+          <EmptyStateHeader titleText="空视图" headingLevel="h5" />
           <EmptyStateBody>
-            There is currently no graph available for {this.namespacesText()}. This could either mean there is no
-            service mesh available for {this.props.namespaces.length === 1 ? 'this namespace' : 'these namespaces'} or
-            the service mesh has yet to see request traffic.
+            当前命名空间 {this.namespacesText()} 没有可展示的流量视图. 这可能意味着 {this.props.namespaces.length === 1 ? '这个命名空间' : '这些命名空间'} 没有可用的服务网格
+            或者服务网格尚未看到请求流量.
             {this.props.showIdleNodes && (
-              <> You are currently displaying 'Idle nodes', send requests to the service mesh and click 'Refresh'.</>
+              <> 您当前已启用“空闲节点”，向服务网格发送请求并点击“刷新”</>
             )}
             {!this.props.showIdleNodes && (
-              <> You can enable 'Idle Nodes' to display service mesh nodes that have yet to see any request traffic.</>
+              <> 您可以启用“空闲节点”以显示尚未看到任何请求流量的服务网格节点</>
             )}
           </EmptyStateBody>
           <EmptyStateFooter>
@@ -145,8 +144,8 @@ export class EmptyGraphLayout extends React.Component<EmptyGraphLayoutProps, Emp
     if (isGraphEmpty && this.props.isMiniGraph) {
       return (
         <EmptyState id="empty-mini-graph" variant={EmptyStateVariant.lg} className={emptyStateStyle}>
-          <EmptyStateHeader titleText="Empty Graph" headingLevel="h5" />
-          <EmptyStateBody>No graph traffic for the time period.</EmptyStateBody>
+          <EmptyStateHeader titleText="空视图" headingLevel="h5" />
+          <EmptyStateBody>该时间周期内不存在流量视图</EmptyStateBody>
         </EmptyState>
       );
     }

@@ -55,10 +55,10 @@ export class WorkloadWizard extends React.Component<WorkloadWizardProps, Workloa
               variant={ButtonVariant.primary}
               onClick={this.onCreateUpdate}
             >
-              {'Create'}
+              {'创建'}
             </Button>,
             <Button key="cancel" variant={ButtonVariant.secondary} onClick={() => this.onClose(false)}>
-              Cancel
+              取消
             </Button>
           ]}
         >

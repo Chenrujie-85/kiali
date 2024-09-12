@@ -150,7 +150,7 @@ class ServiceInfoComponent extends React.Component<Props, ServiceInfoState> {
         triggerRefresh();
       })
       .catch(error => {
-        AlertUtils.addError('Could not delete Istio config objects.', error);
+        AlertUtils.addError('不能删除Istio配置对象', error);
       });
   };
 

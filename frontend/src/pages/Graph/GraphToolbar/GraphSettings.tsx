@@ -396,19 +396,15 @@ class GraphSettingsComponent extends React.PureComponent<GraphSettingsProps, Gra
         tooltip: (
           <div style={{ textAlign: 'left' }}>
             <div>
-              Displays the requested response time. The unit is milliseconds (ms) when less than 1000, otherwise seconds
-              (s). Default: 95th Percentile.
+              显示请求的响应时间。当小于1000时，单位为毫秒（ms），否则为秒(s)。默认值：第95个百分位数
             </div>
             <div>
-              Response times only apply to request-based traffic (not TCP or gRPC messaging). Additionally, the
-              following edges do not offer a response time label but the information is available in the side panel when
-              selecting the edge:
+              响应时间仅适用于基于请求的流量（而不是TCP或gRPC消息传递）。此外，以下边不提供响应时间标签，但在选择边时，侧面板中提供了相关信息：
             </div>
             <div>- edges into service nodes</div>
             <div>- edges into or out of operation nodes.</div>
             <div>
-              This option will be disabled if response time telemetry is unavailable. Some options may be disabled for
-              the same reason.
+              如果响应时间遥测不可用，此选项将被禁用。某些选项可能出于相同的原因而被禁用
             </div>
           </div>
         )
@@ -421,18 +417,15 @@ class GraphSettingsComponent extends React.PureComponent<GraphSettingsProps, Gra
         tooltip: (
           <div style={{ textAlign: 'left' }}>
             <div>
-              Displays the requested HTTP Throughput. The unit is bytes-per-second (bps) when less than 1024, otherwise
-              kilobytes-per-second (kps). Default: Request Throughput
+              显示请求的HTTP吞吐量。当小于1024时，单位为字节每秒（bps），否则为千字节每秒(kps)。默认值：请求吞吐量
             </div>
             <div>
-              Throughput applies only to request-based, HTTP traffic. Additionally, the following edges do not offer a
-              throughput label:
+              吞吐量仅适用于基于请求的HTTP流量。此外，以下边不提供吞吐量标签：
             </div>
             <div>- edges into service nodes</div>
             <div>- edges into or out of operation nodes.</div>
             <div>
-              This option will be disabled if throughput telemetry is unavailable. Some options may be disabled for the
-              same reason.
+              如果吞吐量遥测不可用，此选项将被禁用。某些选项可能出于相同的原因而被禁用
             </div>
           </div>
         )
@@ -443,9 +436,7 @@ class GraphSettingsComponent extends React.PureComponent<GraphSettingsProps, Gra
         labelText: startCase(EdgeLabelMode.TRAFFIC_DISTRIBUTION),
         tooltip: (
           <div style={{ textAlign: 'left' }}>
-            HTTP and gRPC Edges display the percentage of traffic for that edge, when less than 100%. For a source node,
-            the sum for outbound edges (per protocol) should be equal to or near 100%, given rounding. TCP edges are not
-            included in the distribution because their rates reflect bytes.
+            HTTP和gRPC边显示该边的流量百分比，当低于100%时。对于源节点，给定四舍五入，出站边（每个协议）的和应该等于或接近100%。TCP边不包括在分布中，因为它们的速率反映了字节
           </div>
         )
       },
@@ -455,10 +446,7 @@ class GraphSettingsComponent extends React.PureComponent<GraphSettingsProps, Gra
         labelText: startCase(EdgeLabelMode.TRAFFIC_RATE),
         tooltip: (
           <div style={{ textAlign: 'left' }}>
-            HTTP rates are in requests-per-second (rps). gRPC rates may be in requests-per-second (rps) or
-            messages-per-second (mps). For request rates, the percentage of error responses is shown below the rate,
-            when non-zero. TCP rates are in bytes. The unit is bytes-per-second (bps) when less than 1024, otherwise
-            kilobytes-per-second (kps). Rates are rounded to 2 significant digits.
+            HTTP速率以每秒请求数（rps）为单位。gRPC速率可以以每秒请求数（rps）或每秒消息数（mps）为单位。对于请求速率，当为非零时，错误响应的百分比显示在速率的下方。TCP速率以字节为单位。当小于1024时，单位为字节每秒（bps），否则为千字节每秒(kps)。速率四舍五入至2位有效数字
           </div>
         )
       }
@@ -469,10 +457,10 @@ class GraphSettingsComponent extends React.PureComponent<GraphSettingsProps, Gra
         id: EdgeLabelMode.THROUGHPUT_REQUEST,
         isChecked: edgeLabels.includes(EdgeLabelMode.THROUGHPUT_REQUEST) && !this.state.crippledFeatures?.requestSize,
         isDisabled: this.state.crippledFeatures?.requestSize,
-        labelText: 'Request',
+        labelText: '请求',
         tooltip: (
           <div style={{ textAlign: 'left' }}>
-            HTTP request data in bytes-per-second (bps) or kilobytes-per-second (kps)
+            HTTP请求数据，以字节/秒（bps）或千字节/秒（kps）为单位
           </div>
         )
       },
@@ -480,10 +468,10 @@ class GraphSettingsComponent extends React.PureComponent<GraphSettingsProps, Gra
         id: EdgeLabelMode.THROUGHPUT_RESPONSE,
         isChecked: edgeLabels.includes(EdgeLabelMode.THROUGHPUT_RESPONSE) && !this.state.crippledFeatures?.responseSize,
         isDisabled: this.state.crippledFeatures?.responseSize,
-        labelText: 'Response',
+        labelText: '响应',
         tooltip: (
           <div style={{ textAlign: 'left' }}>
-            HTTP response data in bytes per second (bps) or kilobytes-per-second (kps)
+            HTTP响应数据（字节/秒(bps）或千字节/秒（kps）)
           </div>
         )
       }
@@ -492,31 +480,31 @@ class GraphSettingsComponent extends React.PureComponent<GraphSettingsProps, Gra
     const responseTimeOptions: DisplayOptionType[] = [
       {
         id: EdgeLabelMode.RESPONSE_TIME_AVERAGE,
-        labelText: 'Average',
+        labelText: '平均',
         isChecked: edgeLabels.includes(EdgeLabelMode.RESPONSE_TIME_AVERAGE),
         isDisabled: this.state.crippledFeatures?.responseTimeAverage,
-        tooltip: <div style={{ textAlign: 'left' }}>Average request response time</div>
+        tooltip: <div style={{ textAlign: 'left' }}>平均请求响应时间</div>
       },
       {
         id: EdgeLabelMode.RESPONSE_TIME_P50,
-        labelText: 'Median',
+        labelText: '中位数',
         isChecked: edgeLabels.includes(EdgeLabelMode.RESPONSE_TIME_P50),
         isDisabled: this.state.crippledFeatures?.responseTimePercentiles,
-        tooltip: <div style={{ textAlign: 'left' }}>Median request response time (50th Percentile)</div>
+        tooltip: <div style={{ textAlign: 'left' }}>请求响应时间的中位数 (50th Percentile)</div>
       },
       {
         id: EdgeLabelMode.RESPONSE_TIME_P95,
         labelText: '95th Percentile',
         isChecked: edgeLabels.includes(EdgeLabelMode.RESPONSE_TIME_P95),
         isDisabled: this.state.crippledFeatures?.responseTimePercentiles,
-        tooltip: <div style={{ textAlign: 'left' }}>Max response time for 95% of requests (95th Percentile)</div>
+        tooltip: <div style={{ textAlign: 'left' }}>95%请求的最大响应时间 (95th Percentile)</div>
       },
       {
         id: EdgeLabelMode.RESPONSE_TIME_P99,
         labelText: '99th Percentile',
         isChecked: edgeLabels.includes(EdgeLabelMode.RESPONSE_TIME_P99),
         isDisabled: this.state.crippledFeatures?.responseTimePercentiles,
-        tooltip: <div style={{ textAlign: 'left' }}>Max response time for 99% of requests (99th Percentile)</div>
+        tooltip: <div style={{ textAlign: 'left' }}>99%请求的最大响应时间 (99th Percentile)</div>
       }
     ];
 
@@ -524,51 +512,49 @@ class GraphSettingsComponent extends React.PureComponent<GraphSettingsProps, Gra
       {
         id: 'boxByCluster',
         isChecked: boxByCluster,
-        labelText: 'Cluster Boxes',
+        labelText: '集群框',
         onChange: toggleBoxByCluster,
         tooltip: (
           <div style={{ textAlign: 'left' }}>
-            When enabled and there are multiple clusters, the graph will box nodes in the same cluster. The "unknown"
-            cluster is never boxed.
+            当存在并启用多个集群时，图将框住同一集群中的节点。“未知”集群永远不会被框住
           </div>
         )
       },
       {
         id: 'boxByNamespace',
         isChecked: boxByNamespace,
-        labelText: 'Namespace Boxes',
+        labelText: '命名空间框',
         onChange: toggleBoxByNamespace,
         tooltip: (
           <div style={{ textAlign: 'left' }}>
-            When enabled and there are multiple namespaces, the graph will box nodes in the same namespace, within the
-            same cluster. The "unknown" namespace is never boxed.
+            当存在并启用多个命名空间时，图将框住同一命名空间中的节点，在
+            相同的集群。“未知”命名空间永远不会框住
           </div>
         )
       },
       {
         id: 'filterIdleEdges',
         isChecked: showIdleEdges,
-        labelText: 'Idle Edges',
+        labelText: '空闲边',
         onChange: toggleIdleEdges,
         tooltip: (
           <div style={{ textAlign: 'left' }}>
-            Idle edges have no request traffic for the time period. Disabled by default to provide cleaner graphs.
-            Enable to help detect unexpected traffic omissions, or to confirm expected edges with no traffic (due to
-            routing, mirroring, etc).
+            空闲边在该时间段内没有请求流量。默认情况下禁用，以提供更干净的图。
+            启用以帮助检测意外流量遗漏，或确认无流量的预期边(由于路由、镜像等)
           </div>
         )
       },
       {
         id: 'filterIdleNodes',
         isChecked: showIdleNodes,
-        labelText: 'Idle Nodes',
+        labelText: '空闲节点',
         onChange: toggleIdleNodes,
         tooltip: (
           <div style={{ textAlign: 'left' }}>
-            With "Idle Edges" enabled this displays nodes for defined services that have *never* received traffic. With
-            "Idle Edges" disabled this displays nodes for defined services that have not received traffic during the
-            current time period. Disabled by default to provide cleaner graphs. Enable to help locate unused,
-            misconfigured or obsolete services.
+            启用“空闲边缘”后，将显示”从未“接收到流量的已定义服务的节点。
+            禁用“空闲边”选项将显示已定义服务的节点，这些节点在
+            当前时间段。默认情况下禁用，以提供更干净的图。启用以帮助查找未使用、
+            配置错误或过时的服务
           </div>
         )
       },
@@ -576,20 +562,17 @@ class GraphSettingsComponent extends React.PureComponent<GraphSettingsProps, Gra
         id: 'filterOperationNodes',
         isChecked: showOperationNodes,
         isDisabled: this.props.graphType === GraphType.SERVICE,
-        labelText: 'Operation Nodes',
+        labelText: '操作节点',
         onChange: toggleOperationNodes,
         tooltip: (
           <div style={{ textAlign: 'left' }}>
             <div>
-              When both operation and service nodes are enabled then the operation is displayed specific to each service
-              to which it applies, and therefore may be duplicated for different services. When enabled independently
-              each operation will have a single node representing the total traffic for that operation.
+              当同时启用操作和服务节点时，操作将特定于其应用到的每个服务显示，因此对于不同的服务可能会重复。独立启用时，每个操作都将有一个节点代表该操作的总流量
             </div>
             <div>- Operations with no traffic are ignored.</div>
             <div>- This is not applicable to Service graphs.</div>
             <div>
-              - Operation nodes require additional "Request Classification" Istio configuration for workloads in the
-              selected namespaces.
+              - 操作节点需要为所选命名空间中的工作负载进行额外的“请求分类”Istio配置。
             </div>
           </div>
         )
@@ -597,17 +580,17 @@ class GraphSettingsComponent extends React.PureComponent<GraphSettingsProps, Gra
       {
         id: 'rank',
         isChecked: rank,
-        labelText: 'Rank',
+        labelText: '排名',
         onChange: toggleRank,
         tooltip: (
           <div style={{ textAlign: 'left' }}>
-            Rank graph nodes based on configurable criteria such as 'number of inbound edges'. These rankings can be
-            used in the graph find/hide feature to help highlight the most important workloads, services, and
-            applications. Rankings are normalized to fit between 1..100 and nodes may tie with each other in rank.
-            Ranking starts at 1 for the top ranked nodes so when ranking nodes based on 'number of inbound edges', the
-            node(s) with the most inbound edges would have rank 1. Node(s) with the second most inbound edges would have
-            rank 2. Each selected criteria contributes equally to a node's ranking. Although 100 rankings are possible,
-            only the required number of rankings are assigned, starting at 1.
+            根据可配置的标准（如“入站边数”）对图节点进行排序。这些排名可以
+            用于图形查找/隐藏功能，以帮助突出显示最重要的工作负载、服务和
+            应用程序。将排名归一化，以适合在1..100之间，并且节点可能在排名中彼此并列。
+            排名靠前的节点的排名从1开始，因此当根据“入站边数”对节点进行排名时，
+            具有最多入向边的节点将具有秩1。具有第二多的入向边的节点
+            2级。每个选择的标准对节点的排名都有相同的贡献。虽然100个排名是可能的，
+            仅分配所需的排名数量，从1开始
           </div>
         )
       },
@@ -615,26 +598,22 @@ class GraphSettingsComponent extends React.PureComponent<GraphSettingsProps, Gra
         id: 'filterServiceNodes',
         isChecked: showServiceNodes,
         isDisabled: this.props.graphType === GraphType.SERVICE,
-        labelText: 'Service Nodes',
+        labelText: '服务节点',
         onChange: toggleServiceNodes,
         tooltip: (
           <div style={{ textAlign: 'left' }}>
-            Reflect service routing by injecting the destination service nodes into the graph. This can be useful for
-            grouping requests for the same service, but routed to different workloads. Edges leading into service nodes
-            are logical aggregations and will not show response time labels, but if selected the side panel will provide
-            a response time chart.
+            通过将目标服务节点注入到图中来反映服务路由。这对于将相同服务的请求分组，但路由到不同工作负载非常有用。进入服务节点的边是逻辑聚合，不会显示响应时间标签，但如果选中，侧面板将提供响应时间图表
           </div>
         )
       },
       {
         id: 'filterTrafficAnimation',
         isChecked: showTrafficAnimation,
-        labelText: 'Traffic Animation',
+        labelText: '流量动画',
         onChange: toggleTrafficAnimation,
         tooltip: (
           <div style={{ textAlign: 'left' }}>
-            Animate the graph to reflect traffic flow. The particle density and speed roughly reflects an edge's request
-            load relevant to the other edges. Animation can be CPU intensive.
+            设置图形动画以反映流量。粒子密度和速度大致反映了一条边相对于其他边的请求负载。动画可以是CPU密集型的
           </div>
         )
       }
@@ -668,15 +647,12 @@ class GraphSettingsComponent extends React.PureComponent<GraphSettingsProps, Gra
       {
         id: 'filterSecurity',
         isChecked: showSecurity,
-        labelText: 'Security',
+        labelText: '安全',
         onChange: toggleGraphSecurity,
         tooltip: (
           <div style={{ textAlign: 'left' }}>
             <div>
-              Show lock icons on edges with mTLS traffic. The percentage of mTLS traffic can be seen in the side-panel
-              when selecting the edge. Note that the global masthead will show a lock icon when global mTLS is enabled.
-              The side-panel will also display source and destination principals, if available. mTLS status is not
-              offered for gRPC-message traffic.
+              在具有mTLS流量的边显示锁图标。选择边时，可以在侧面板中看到mTLS流量的百分比。请注意，启用全局mTLS时，全局刊头将显示锁图标。侧面板还将显示源主体和目标主体（如果可用）。mTLS状态不为gRPC消息流量提供
             </div>
           </div>
         )
@@ -684,13 +660,12 @@ class GraphSettingsComponent extends React.PureComponent<GraphSettingsProps, Gra
       {
         id: 'filterVS',
         isChecked: showVirtualServices,
-        labelText: 'Virtual Services',
+        labelText: '虚拟服务',
         onChange: toggleGraphVirtualServices,
         tooltip: (
           <div style={{ textAlign: 'left' }}>
             <div>
-              Show virtual service related icons. Additional icons are displayed if a circuit breaker is present on the
-              virtual service or if the virtual service was created through one of the Kiali service wizards.
+              显示虚拟服务相关图标。如果虚拟服务上存在熔断，或者虚拟服务是通过Kiali服务wizards之一创建的，则会显示其他图标。
             </div>
           </div>
         )

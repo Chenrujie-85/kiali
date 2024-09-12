@@ -142,7 +142,7 @@ class ServiceDetailsPageComponent extends React.Component<ServiceDetailsProps, S
       .catch(error => {
         AlertUtils.addError('Could not fetch Service Details.', error);
         const msg: ErrorMsg = {
-          title: 'No Service is selected',
+          title: '没有服务被选中',
           description: `${this.props.serviceId.service} is not found in the mesh`
         };
         this.setState({ error: msg });
@@ -161,7 +161,7 @@ class ServiceDetailsPageComponent extends React.Component<ServiceDetailsProps, S
 
   private renderTabs(): JSX.Element[] {
     const overTab = (
-      <Tab eventKey={0} title="Overview" key="Overview">
+      <Tab eventKey={0} title="总览" key="Overview">
         <ServiceInfo
           cluster={this.state.cluster ? this.state.cluster : ''}
           namespace={this.props.serviceId.namespace}
@@ -175,7 +175,7 @@ class ServiceDetailsPageComponent extends React.Component<ServiceDetailsProps, S
       </Tab>
     );
     const trafficTab = (
-      <Tab eventKey={1} title="Traffic" key={trafficTabName}>
+      <Tab eventKey={1} title="流量" key={trafficTabName}>
         <TrafficDetails
           itemName={this.props.serviceId.service}
           itemType={MetricsObjectTypes.SERVICE}
@@ -187,7 +187,7 @@ class ServiceDetailsPageComponent extends React.Component<ServiceDetailsProps, S
     );
 
     const inTab = (
-      <Tab eventKey={2} title="Inbound Metrics" key="Inbound Metrics">
+      <Tab eventKey={2} title="入站指标" key="Inbound Metrics">
         <IstioMetrics
           lastRefreshAt={this.props.lastRefreshAt}
           namespace={this.props.serviceId.namespace}
@@ -203,7 +203,7 @@ class ServiceDetailsPageComponent extends React.Component<ServiceDetailsProps, S
 
     if (this.props.tracingInfo && this.props.tracingInfo.enabled && this.props.tracingInfo.integration) {
       tabsArray.push(
-        <Tab eventKey={3} title="Traces" key="Traces">
+        <Tab eventKey={3} title="分布式追踪" key="Traces">
           <TracesComponent
             lastRefreshAt={this.props.lastRefreshAt}
             namespace={this.props.serviceId.namespace}

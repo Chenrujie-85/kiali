@@ -82,13 +82,13 @@ export class RuleBuilder extends React.Component<Props, State> {
     return (
       <>
         <Tabs isFilled={true} activeKey={this.state.ruleTabKey} onSelect={this.ruleHandleTabClick}>
-          <Tab eventKey={0} title={'Request Matching'} data-test={'Request Matching'}>
+          <Tab eventKey={0} title={"请求匹配"} data-test={'Request Matching'}>
             <div style={{ marginTop: '20px' }}>
               <MatchBuilder {...this.props} />
               <Matches {...this.props} />
             </div>
           </Tab>
-          <Tab eventKey={1} title={'Route To'} data-test={'Route To'}>
+          <Tab eventKey={1} title={"路由流量配置"} data-test={'Route To'}>
             <div
               style={{
                 marginBottom: '10px'
@@ -103,7 +103,7 @@ export class RuleBuilder extends React.Component<Props, State> {
               />
             </div>
           </Tab>
-          <Tab eventKey={2} title={'Fault Injection'} data-test={'Fault Injection'}>
+          <Tab eventKey={2} title={"故障注入"} data-test={'Fault Injection'}>
             <div style={{ marginTop: '10px' }}>
               <FaultInjection
                 initFaultInjectionRoute={this.props.faultInjectionRoute}
@@ -111,7 +111,7 @@ export class RuleBuilder extends React.Component<Props, State> {
               />
             </div>
           </Tab>
-          <Tab eventKey={3} title={'Request Timeouts'} data-test={'Request Timeouts'}>
+          <Tab eventKey={3} title={"请求超时配置"} data-test={'Request Timeouts'}>
             <div style={{ marginTop: '10px' }}>
               <RequestTimeouts
                 initTimeoutRetry={this.props.timeoutRetryRoute}
@@ -129,7 +129,7 @@ export class RuleBuilder extends React.Component<Props, State> {
               onClick={this.props.onAddRule}
               data-test="add-route"
             >
-              Add Route Rule
+              添加路由规则
             </Button>
           </span>
         </div>

@@ -152,7 +152,7 @@ export const MatchBuilder: React.FC<MatchBuilderProps> = (props: MatchBuilderPro
           onClick={props.onAddMatch}
           data-test="add-match"
         >
-          Add Match
+          添加匹配规则
         </Button>
       </InputGroupItem>
     </InputGroup>

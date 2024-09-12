@@ -94,12 +94,12 @@ export type WizardAction =
 export type WizardMode = 'create' | 'update';
 
 export const WIZARD_TITLES = {
-  [WIZARD_REQUEST_ROUTING]: 'Request Routing',
-  [WIZARD_FAULT_INJECTION]: 'Fault Injection',
-  [WIZARD_TRAFFIC_SHIFTING]: 'Traffic Shifting',
-  [WIZARD_TCP_TRAFFIC_SHIFTING]: 'TCP Traffic Shifting',
-  [WIZARD_REQUEST_TIMEOUTS]: 'Request Timeouts',
-  [WIZARD_K8S_REQUEST_ROUTING]: 'K8s Gateway API Routing'
+  [WIZARD_REQUEST_ROUTING]: '请求路由',
+  [WIZARD_FAULT_INJECTION]: '故障注入',
+  [WIZARD_TRAFFIC_SHIFTING]: '流量调整',
+  [WIZARD_TCP_TRAFFIC_SHIFTING]: 'TCP 流量调整',
+  [WIZARD_REQUEST_TIMEOUTS]: '请求超时',
+  [WIZARD_K8S_REQUEST_ROUTING]: 'K8s网关API路由'
 };
 
 export type ServiceWizardProps = {

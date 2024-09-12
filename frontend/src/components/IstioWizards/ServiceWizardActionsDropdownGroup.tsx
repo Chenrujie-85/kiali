@@ -56,13 +56,13 @@ export const ServiceWizardActionsDropdownGroup: React.FunctionComponent<Props> =
 
   const getDropdownItemTooltipMessage = (isGatewayAPI: boolean): string => {
     if (serverConfig.deployment.viewOnlyMode) {
-      return 'User does not have permission';
+      return '用户没有权限';
     } else if (hasTrafficRouting()) {
-      return 'Traffic routing already exists for this service';
+      return '此服务已存在流量路由规则';
     } else if (isGatewayAPI) {
-      return 'K8s Gateway API is not enabled';
+      return 'K8s Gateway API不可用';
     } else {
-      return "Traffic routing doesn't exists for this service";
+      return "该服务的流量路由规则不存在";
     }
   };
 
@@ -115,8 +115,8 @@ export const ServiceWizardActionsDropdownGroup: React.FunctionComponent<Props> =
         data-test={WIZARD_EDIT_ANNOTATIONS}
       >
         {serverConfig.kialiFeatureFlags.istioAnnotationAction && !serverConfig.deployment.viewOnlyMode
-          ? 'Edit Annotations'
-          : 'View Annotations'}
+          ? '编辑 Annotations'
+          : '查看 Annotations'}
       </DropdownItem>
     );
   }
@@ -137,7 +137,7 @@ export const ServiceWizardActionsDropdownGroup: React.FunctionComponent<Props> =
       isDisabled={deleteDisabled}
       data-test={DELETE_TRAFFIC_ROUTING}
     >
-      Delete Traffic Routing
+      删除流量路由规则
     </DropdownItem>
   );
 
@@ -155,7 +155,7 @@ export const ServiceWizardActionsDropdownGroup: React.FunctionComponent<Props> =
 
   actionItems.push(deleteDropdownItem);
 
-  const label = updateLabel === '' ? 'Create' : 'Update';
+  const label = updateLabel === '' ? '创建' : '更新';
 
   return <DropdownGroup key={`group_${label}`} label={label} className={groupMenuStyle} children={actionItems} />;
 };

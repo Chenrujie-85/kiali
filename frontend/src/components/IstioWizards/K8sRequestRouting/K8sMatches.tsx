@@ -33,7 +33,7 @@ export class K8sMatches extends React.Component<Props> {
             marginRight: '32px'
           }}
         >
-          Matching selected
+          已选择的匹配规则
           {wizardTooltip(MATCHING_SELECTED_TOOLTIP)}
         </span>
         {matches.length > 0 ? matches : <b>Match any request</b>}

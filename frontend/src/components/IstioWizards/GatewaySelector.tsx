@@ -164,7 +164,7 @@ export class GatewaySelector extends React.Component<Props, GatewaySelectorState
   render() {
     return (
       <Form isHorizontal={true}>
-        <FormGroup label="Add Gateway" fieldId="gatewaySwitch">
+        <FormGroup label="添加网关" fieldId="gatewaySwitch">
           <Switch
             id="advanced-gwSwitch"
             label={' '}
@@ -181,7 +181,7 @@ export class GatewaySelector extends React.Component<Props, GatewaySelectorState
                 id="includeMesh"
                 label={
                   <>
-                    Include <b>mesh</b> gateway
+                    包含 <b>mesh</b> 网关
                   </>
                 }
                 isDisabled={!this.state.addGateway}
@@ -200,7 +200,7 @@ export class GatewaySelector extends React.Component<Props, GatewaySelectorState
               <Radio
                 id="existingGateway"
                 name="selectGateway"
-                label="Select Gateway"
+                label="选择网关"
                 isDisabled={!this.state.addGateway || this.props.gateways.length === 0}
                 isChecked={!this.state.newGateway}
                 onChange={() => this.onFormChange(GatewayForm.SELECT, 'false')}
@@ -208,14 +208,14 @@ export class GatewaySelector extends React.Component<Props, GatewaySelectorState
               <Radio
                 id="createGateway"
                 name="selectGateway"
-                label="Create Gateway"
+                label="创建网关"
                 isDisabled={!this.state.addGateway}
                 isChecked={this.state.newGateway}
                 onChange={() => this.onFormChange(GatewayForm.SELECT, 'true')}
               />
             </FormGroup>
             {!this.state.newGateway && (
-              <FormGroup fieldId="selectGateway" label="Gateway">
+              <FormGroup fieldId="selectGateway" label="网关">
                 {this.props.gateways.length > 0 && (
                   <FormSelect
                     id="selectGateway"
@@ -233,7 +233,7 @@ export class GatewaySelector extends React.Component<Props, GatewaySelectorState
             )}
             {this.state.newGateway && (
               <>
-                <FormGroup fieldId="gwPort" label="Port">
+                <FormGroup fieldId="gwPort" label="端口">
                   <TextInput
                     id="gwPort"
                     name="gwPort"
@@ -243,7 +243,7 @@ export class GatewaySelector extends React.Component<Props, GatewaySelectorState
                     onChange={(_event, value) => this.onFormChange(GatewayForm.PORT, value)}
                   />
                 </FormGroup>
-                <FormGroup fieldId="gwHosts" label="Gateway Hosts">
+                <FormGroup fieldId="gwHosts" label="创建网关">
                   <TextInput
                     id="gwHosts"
                     name="gwHosts"
@@ -256,8 +256,8 @@ export class GatewaySelector extends React.Component<Props, GatewaySelectorState
                     <HelperText>
                       <HelperTextItem>
                         {isValid(this.state.gwHostsValid)
-                          ? 'One or more hosts exposed by this gateway. Enter one or multiple hosts separated by comma.'
-                          : "Gateway hosts should be specified using FQDN format or '*' wildcard."}
+                          ? '在这个网关下，有一个或多个主机被暴露出来，请输入一个或多个主机名，用逗号分隔'
+                          : "在配置网关时，网关的主机应该使用完全限定域名FQDN格式或通配符“*”来指定"}
                       </HelperTextItem>
                     </HelperText>
                   </FormHelperText>

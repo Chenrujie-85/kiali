@@ -17,7 +17,7 @@ export class IstioConfigHelp extends React.Component<IstioConfigHelpProps> {
       <Stack>
         <StackItem>
           <Title headingLevel="h4" size={TitleSizes.lg} style={{ paddingBottom: '10px' }}>
-            Help
+            帮助
           </Title>
         </StackItem>
 
@@ -35,7 +35,7 @@ export class IstioConfigHelp extends React.Component<IstioConfigHelpProps> {
         )}
         {!helpMessage && (
           <StackItem>
-            <p>Help information will appear when editing on important fields for this configuration.</p>
+            <p>编辑此配置的重要字段时，将显示帮助信息</p>
           </StackItem>
         )}
       </Stack>

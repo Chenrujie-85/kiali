@@ -5,7 +5,7 @@ import { groupMenuStyle } from 'styles/DropdownStyles';
 
 export const LoadingWizardActionsDropdownGroup = () => {
   return (
-    <DropdownGroup key="wizards" label="Actions" className={groupMenuStyle}>
+    <DropdownGroup key="wizards" label="操作" className={groupMenuStyle}>
       <DropdownItem isDisabled={true}>
         <Spinner size="md" aria-label="Loading actions..." />
       </DropdownItem>

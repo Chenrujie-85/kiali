@@ -5,77 +5,77 @@ import { t } from 'utils/I18nUtils';
 
 export const GraphTourStops: { [name: string]: TourStopInfo } = {
   ContextualMenu: {
-    name: t('Contextual Menu'),
+    name: t('上下文菜单'),
     description: t(
-      'Right-click a node or an edge to see the contextual menu with links to details, traffic and inbound/outbound metrics for the node or edge.'
+      '右键单击节点或边缘可查看上下文菜单，其中包含指向节点或边缘的详细信息、流量和入站/出站指标的链接'
     ),
     position: PopoverPosition.left,
     distance: 250
   },
   ContextualMenuPF: {
-    name: t('Contextual Menu'),
+    name: t('上下文菜单'),
     description: t(
-      'Click kebab menu on a node label for links to details, traffic, inbound/outbound metrics and node graph.'
+      '单击节点，可链接到详细信息、流量、入站/出站指标和节点图'
     ),
     position: PopoverPosition.left,
     distance: 250
   },
   Display: {
-    name: t('Display'),
+    name: t('展示'),
     description: t(
-      'Set edge labeling, node badging, and various display options. Response-time edge labeling, security badging, and traffic animation may affect performance. Response-times reflect the 95th percentile.'
+      '设置边标签、节点标签和各种显示选项。响应时间边缘标记、安全标记和流量动画可能会影响性能'
     ),
     position: PopoverPosition.rightStart
   },
   Find: {
-    name: t('Find and Hide'),
+    name: t('寻找或隐藏'),
     description: t(
-      'Highlight or Hide graph elements via typed expressions. Click the dropdown for preset Find or Hide expressions. Click the Find/Hide help icon for details on the expression language.'
+      '通过类型化表达式高亮或隐藏图元素。单击预设的查找或隐藏表达式的下拉列表。单击“查找/隐藏”帮助图标，了解有关表达式语言的详细信息。'
     ),
     position: PopoverPosition.bottom
   },
   Graph: {
-    name: t('Graph'),
+    name: t('视图'),
     description:
-      "Click on a node or edge to see its summary and emphasize its end-to-end paths. Double-click a node to see a graph focused on that node.\nDouble-click an t('external namespace' node to navigate directly to the namespace in the node's text label. Shift-Drag to quickly zoom in.",
+      "单击节点或边可查看其摘要并强调其端到端路径。双击节点可查看以该节点为焦点的图\n双击“外部命名空间”节点可直接导航到节点文本标签中的命名空间。按住Shift键并拖动可快速放大",
     position: PopoverPosition.left,
     distance: 250
   },
   GraphPF: {
-    name: t('Graph'),
-    description: t('Click on a node or edge to see its summary and emphasize its end-to-end paths.'),
+    name: t('视图'),
+    description: t('单击节点或边可查看其摘要并强调其端到端路径。'),
     position: PopoverPosition.left,
     distance: 250
   },
   GraphTraffic: {
-    name: t('Graph Traffic'),
+    name: t('图标流量'),
     description: t(
-      'Choose the traffic rates used to generate the graph. Each supported protocol offers one or more options. Unused protocols can be omitted.'
+      '选择用于生成图表的流量速率。每个支持的协议都提供一个或多个选项。未使用的协议可以省略'
     ),
     position: PopoverPosition.bottom
   },
   GraphType: {
-    name: t('Graph Type'),
+    name: t('视图类型'),
     description: t(
-      'Select a workload, service or application graph view. An application view can optionally be versioned and relies on app and version labeling. Workload and service graphs provide physical and logical views, respectively.'
+      '选择工作负载、服务或应用程序图形视图。应用程序视图用于版本控制，它依赖于应用程序和版本标签。工作负载和服务图分别提供物理视图和逻辑视图'
     ),
     position: PopoverPosition.right
   },
   Layout: {
-    name: t('Layout selection'),
+    name: t('布局选择'),
     description: t(
-      'Select the graph layout for the mesh. Different layouts work best with different meshes. Find the layout that works best. Other buttons here provide zoom and fit-to-screen options.'
+      '选择网格的图形布局。不同的布局对不同的网格效果最好。找到最有效的布局。这里的其他按钮提供缩放和适合屏幕选项。'
     ),
     position: PopoverPosition.right
   },
   Legend: {
-    name: t('Legend'),
-    description: t('Display the legend to learn about what the different shapes, colors and backgrounds mean.'),
+    name: t('图例'),
+    description: t('显示图例以了解不同形状、颜色和背景的含义。'),
     position: PopoverPosition.rightEnd
   },
   Namespaces: {
-    name: t('Namespaces'),
-    description: t('Select the namespaces you want to see in the graph.'),
+    name: t('命名空间'),
+    description: t('选择你想在视图中看到的命名空间'),
     position: PopoverPosition.bottomStart
   },
   Shortcuts: {
@@ -84,16 +84,16 @@ export const GraphTourStops: { [name: string]: TourStopInfo } = {
     position: PopoverPosition.leftStart
   },
   SidePanel: {
-    name: t('Side Panel'),
+    name: t('侧面板'),
     description: t(
-      'The Side Panel shows details about the currently selected node or edge, otherwise the whole graph.'
+      '侧面板显示有关当前选定节点或边的详细信息，否则显示整个视图'
     ),
     position: PopoverPosition.left
   },
   TimeRange: {
-    name: t('Time Range & Replay'),
+    name: t('时间范围&重放'),
     description: t(
-      'Select how often to refresh the graph and how much historical metric data is used to build the graph, per refresh. For example "Last 5m" means use the most recent 5 minutes of request metric data.  To replay a historical time window click the replay icon.  This replaces the current time range controls with the replay toolbar.'
+      '选择刷新图表的频率，以及每次刷新使用多少历史度量数据来构建图表。例如，“Last 5m”表示使用最近5分钟的请求指标数据。要重播历史时间窗口，请单击重播图标。这将用重播工具栏替换当前的时间范围控件。'
     ),
     position: PopoverPosition.bottomEnd
   }

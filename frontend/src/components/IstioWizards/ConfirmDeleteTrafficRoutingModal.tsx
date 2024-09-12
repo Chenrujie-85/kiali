@@ -17,7 +17,7 @@ export const ConfirmDeleteTrafficRoutingModal: React.FunctionComponent<Props> = 
   }
 
   function getDeleteMessage() {
-    const deleteMessage = 'Are you sure you want to delete ?';
+    const deleteMessage = '确定删除 ?';
     const deleteItems: JSX.Element[] = [];
 
     let i = 0;
@@ -66,16 +66,16 @@ export const ConfirmDeleteTrafficRoutingModal: React.FunctionComponent<Props> = 
   return (
     <Modal
       variant={ModalVariant.small}
-      title="Confirm Delete Traffic Routing ?"
+      title="确认删除流量路由 ?"
       isOpen={props.isOpen}
       onClose={props.onCancel}
       data-test="delete-traffic-routing-modal"
       actions={[
         <Button key="confirm" variant={ButtonVariant.danger} onClick={props.onConfirm} data-test={'confirm-delete'}>
-          Delete
+          删除
         </Button>,
         <Button key="cancel" variant={ButtonVariant.secondary} isInline onClick={props.onCancel}>
-          Cancel
+          取消
         </Button>
       ]}
     >

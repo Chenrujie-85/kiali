@@ -83,7 +83,7 @@ export const IstioActionsNamespaceDropdown: React.FC = () => {
           data-test="istio-actions-toggle"
           isExpanded={dropdownOpen}
         >
-          Actions
+          操作
         </MenuToggle>
       )}
       isOpen={dropdownOpen}

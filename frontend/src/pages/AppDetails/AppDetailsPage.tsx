@@ -150,13 +150,13 @@ class AppDetails extends React.Component<AppDetailsProps, AppDetailsState> {
 
   private staticTabs(): JSX.Element[] {
     const overTab = (
-      <Tab title="Overview" eventKey={0} key={'Overview'}>
+      <Tab title="总览" eventKey={0} key={'Overview'}>
         <AppInfo app={this.state.app} duration={this.props.duration} health={this.state.health} />
       </Tab>
     );
 
     const trafficTab = (
-      <Tab title="Traffic" eventKey={1} key={'Traffic'}>
+      <Tab title="流量" eventKey={1} key={'Traffic'}>
         <TrafficDetails
           itemName={this.props.appId.app}
           itemType={MetricsObjectTypes.APP}
@@ -168,7 +168,7 @@ class AppDetails extends React.Component<AppDetailsProps, AppDetailsState> {
     );
 
     const inTab = (
-      <Tab title="Inbound Metrics" eventKey={2} key={'Inbound Metrics'}>
+      <Tab title="入职指标" eventKey={2} key={'Inbound Metrics'}>
         <IstioMetrics
           data-test="inbound-metrics-component"
           lastRefreshAt={this.props.lastRefreshAt}
@@ -182,7 +182,7 @@ class AppDetails extends React.Component<AppDetailsProps, AppDetailsState> {
     );
 
     const outTab = (
-      <Tab title="Outbound Metrics" eventKey={3} key={'Outbound Metrics'}>
+      <Tab title="出站指标" eventKey={3} key={'Outbound Metrics'}>
         <IstioMetrics
           data-test="outbound-metrics-component"
           lastRefreshAt={this.props.lastRefreshAt}
@@ -223,7 +223,7 @@ class AppDetails extends React.Component<AppDetailsProps, AppDetailsState> {
             target="_blank"
             title={
               <>
-                Traces <ExternalLinkAltIcon />
+                分布式追踪 <ExternalLinkAltIcon />
               </>
             }
           />

@@ -21,23 +21,23 @@ export const wizardTooltip = (tooltipContent: React.ReactFragment) => {
 
 export const CONNECTION_POOL_TOOLTIP = (
   <>
-    <div style={{ marginBottom: 5 }}>Connection pool settings for an upstream host.</div>
-    <div style={{ marginBottom: 5 }}>The settings apply to each individual host in the upstream service.</div>
+    <div style={{ marginBottom: 5 }}>上游主机的连接池设置</div>
+    <div style={{ marginBottom: 5 }}>这个设置将被用于使用上游服务的每个独立主机</div>
     <div>
-      Connection pool settings can be applied at the <span className={importantTooltip}>TCP</span> level as well as at{' '}
-      <span className={importantTooltip}>HTTP</span> level.
+      连接池设置将被用于 <span className={importantTooltip}>TCP</span> 级别和{' '}
+      <span className={importantTooltip}>HTTP</span> 级别.
     </div>
   </>
 );
 
 export const GATEWAY_TOOLTIP = (
   <>
-    <div style={{ marginBottom: 5 }}>The names of gateways that should apply these routes.</div>
+    <div style={{ marginBottom: 5 }}>将使用这些路由规则的网关的名称</div>
     <div style={{ marginBottom: 5 }}>
-      If a list of gateway names is provided, the route rules will apply only to the gateways.
+      如果提供了网关名称列表，则路由规则将仅应用于这些网关
     </div>
     <div>
-      To apply rules to both gateways and sidecars, specify the reserverd word{' '}
+      要将规则同时应用于网关和边车，请指定保留字{' '}
       <span className={importantTooltip}>mesh</span>.
     </div>
   </>
@@ -45,29 +45,28 @@ export const GATEWAY_TOOLTIP = (
 
 export const HTTP_ABORT_TOOLTIP = (
   <>
-    Abort HTTP request attempts and return error codes back to <span className={importantTooltip}>DOWNSTREAM</span>{' '}
-    service, giving the impression that the <span className={importantTooltip}>UPSTREAM</span> service is faulty.
+    中止HTTP请求并将错误状态码返回给 <span className={importantTooltip}>下游</span>{' '}
+    服务, 从而使 <span className={importantTooltip}>上游</span> 服务表现出故障
   </>
 );
 
 export const HTTP_DELAY_TOOLTIP = (
   <>
-    Delay requests <span className={importantTooltip}>BEFORE</span> forwarding, emulating various failures such as
-    network issues, overloaded upstream service, etc.
+    在转发请求 <span className={importantTooltip}>前</span> 进行延迟处理，模拟各种故障，如网络问题、上游服务过载等
   </>
 );
 
-export const HTTP_RETRY_TOOLTIP = <>Describes the retry policy to use when a HTTP request fails.</>;
+export const HTTP_RETRY_TOOLTIP = <>当HTTP请求失败时使用的重试策略</>;
 
-export const HTTP_TIMEOUT_TOOLTIP = <>Timeout for HTTP requests, default is disabled.</>;
+export const HTTP_TIMEOUT_TOOLTIP = <>设置HTTP请求超时，默认被禁用</>;
 
-export const LOAD_BALANCER_TOOLTIP = <>Load balancing policies to apply for a specific destination.</>;
+export const LOAD_BALANCER_TOOLTIP = <>负载均衡策略将被用于特定的目的主机</>;
 
 export const MATCHING_SELECTED_TOOLTIP = (
   <>
-    <div style={{ marginBottom: 5 }}>Match conditions to be satisfied for the rule to be activated.</div>
+    <div style={{ marginBottom: 5 }}>激活规则需满足的匹配条件</div>
     <div>
-      Kiali Wizard will create all conditions with an <span className={importantTooltip}>OR</span> semantic.
+      Kiali Wizard 将使用 <span className={importantTooltip}>OR</span> 语义创建所有条件.
     </div>
   </>
 );
@@ -84,16 +83,14 @@ export const FILTERING_SELECTED_TOOLTIP = (
 export const OUTLIER_DETECTION_TOOLTIP = (
   <>
     <div style={{ marginBottom: 5 }}>
-      A Circuit breaker implementation that tracks the status of each individual host in the{' '}
-      <span className={importantTooltip}>upstream</span> service.{' '}
+      一个熔断器，用于跟踪{' '}
+      <span className={importantTooltip}>上游</span> 服务{' '}
     </div>
     <div style={{ marginBottom: 5 }}>
-      For <span className={importantTooltip}>HTTP</span> services, hosts that continually return 5xx errors for API
-      calls are ejected from the pool for a pre-defined period of time.
+      对于 <span className={importantTooltip}>HTTP</span> 服务, 对于在API调用时连续返回5XX的主机，将从连接池驱逐该主机
     </div>
     <div>
-      For <span className={importantTooltip}>TCP</span> services, connection timeouts or connection failures to a given
-      host counts as an error when measuring the consecutive errors metric.
+      对于 <span className={importantTooltip}>TCP</span> 服务, 在测量连续错误度量时，与给定主机的连接超时或连接失败会被计为错误
     </div>
   </>
 );
@@ -101,19 +98,19 @@ export const OUTLIER_DETECTION_TOOLTIP = (
 export const PEER_AUTHENTICATION_TOOLTIP = (
   <>
     <div style={{ marginBottom: 5 }}>
-      PeerAuthentication defines how traffic will be tunneled (or not) to the sidecar.
+      对等身份认证定义了如何（或是否）通过mTLS进行加密和身份验证
     </div>
     <div>
-      Defines the <span className={importantTooltip}>mTLS</span> mode used for peer authentication.
+      定义将会被对等身份认证使用的 <span className={importantTooltip}>mTLS</span> 模式
     </div>
   </>
 );
 
 export const ROUTE_RULES_TOOLTIP = (
   <>
-    <div style={{ marginBottom: 5 }}>An ordered list of route rules for HTTP traffic.</div>
+    <div style={{ marginBottom: 5 }}>HTTP流量的路由规则有序列表</div>
     <div>
-      The first rule <span className={importantTooltip}>MATCHING</span> an incoming request is used.
+      在处理传入请求时，会使用第一个与之 <span className={importantTooltip}>匹配</span> 的路由规则
     </div>
   </>
 );

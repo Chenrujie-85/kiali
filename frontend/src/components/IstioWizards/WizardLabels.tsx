@@ -195,17 +195,17 @@ export class WizardLabels extends React.Component<Props, State> {
     const footer = (
       <ActionGroup>
         <Button variant="primary" isDisabled={!this.props.canEdit} onClick={this.onChange} data-test={'save-button'}>
-          Save
+          保存
         </Button>
 
         {this.props.canEdit && (
           <Button variant="secondary" className={clearButtonStyle} onClick={this.onClear}>
-            Clear
+            清除
           </Button>
         )}
 
         <Button variant="link" onClick={this.onClose}>
-          Cancel
+          取消
         </Button>
       </ActionGroup>
     );

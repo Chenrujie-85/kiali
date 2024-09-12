@@ -474,7 +474,7 @@ export class ServiceWizard extends React.Component<ServiceWizardProps, ServiceWi
       .then(results => {
         if (results.length > 0) {
           AlertUtils.add(
-            `Istio Config ${this.props.update ? 'updated' : 'created'} for ${this.props.serviceName} service.`,
+            `${this.props.serviceName} 服务的Istio 配置 ${this.props.update ? '更新' : '创建'}成功`,
             'default',
             MessageType.SUCCESS
           );
@@ -482,7 +482,7 @@ export class ServiceWizard extends React.Component<ServiceWizardProps, ServiceWi
         this.onClose(true);
       })
       .catch(error => {
-        AlertUtils.addError(`Could not ${this.props.update ? 'update' : 'create'} Istio config objects.`, error);
+        AlertUtils.addError(`不能 ${this.props.update ? '更新' : '创建'} Istio 配置对象`, error);
         this.onClose(true);
       });
   };
@@ -767,15 +767,15 @@ export class ServiceWizard extends React.Component<ServiceWizardProps, ServiceWi
     const titleAction =
       this.props.type.length > 0
         ? this.props.update
-          ? `Update ${WIZARD_TITLES[this.props.type]}`
-          : `Create ${WIZARD_TITLES[this.props.type]}`
+          ? `更新 ${WIZARD_TITLES[this.props.type]}`
+          : `创建 ${WIZARD_TITLES[this.props.type]}`
         : 'View Modal';
 
     const titleModal =
       this.props.type.length > 0
         ? this.props.update
-          ? `Update ${WIZARD_TITLES[this.props.type]}`
-          : `Create ${WIZARD_TITLES[this.props.type]}`
+          ? `更新 ${WIZARD_TITLES[this.props.type]}`
+          : `创建 ${WIZARD_TITLES[this.props.type]}`
         : 'View Modal';
 
     return (
@@ -792,16 +792,16 @@ export class ServiceWizard extends React.Component<ServiceWizardProps, ServiceWi
               onClick={this.onCreateUpdate}
               data-test={`confirm-${this.props.update ? 'update' : 'create'}`}
             >
-              {this.props.update ? 'Update' : 'Create'}
+              {this.props.update ? '更新' : '创建'}
             </Button>,
             <Button key="cancel" variant={ButtonVariant.secondary} onClick={() => this.onClose(false)}>
-              Cancel
+              取消
             </Button>
           ]}
         >
           <>
-            You're going to {this.props.update ? 'update' : 'create'} istio objects in Namespace {this.props.namespace}.
-            Are you sure?
+            你将在命名空间 {this.props.namespace} {this.props.update ? '更新' : '创建'} istio 对象。
+            确认执行？
           </>
         </Modal>
 
@@ -825,10 +825,10 @@ export class ServiceWizard extends React.Component<ServiceWizardProps, ServiceWi
               onClick={this.onPreview}
               data-test="preview"
             >
-              Preview
+              预览
             </Button>,
             <Button key="cancel" variant={ButtonVariant.secondary} onClick={() => this.onClose(false)}>
-              Cancel
+              取消
             </Button>
           ]}
         >
@@ -912,7 +912,7 @@ export class ServiceWizard extends React.Component<ServiceWizardProps, ServiceWi
             <ExpandableSection
               className={advancedOptionsStyle}
               isExpanded={this.state.showAdvanced}
-              toggleText={`${this.state.showAdvanced ? 'Hide' : 'Show'} Advanced Options`}
+              toggleText={`${this.state.showAdvanced ? '隐藏' : '展示'} 高级选项`}
               contentId={`${this.state.showAdvanced ? 'hide' : 'show'}_advanced_options`}
               onToggle={() => {
                 this.setState({
@@ -921,7 +921,7 @@ export class ServiceWizard extends React.Component<ServiceWizardProps, ServiceWi
               }}
             >
               <Tabs isFilled={true} activeKey={this.state.advancedTabKey} onSelect={this.advancedHandleTabClick}>
-                <Tab eventKey={0} title={'Destination Hosts'}>
+                <Tab eventKey={0} title={"目的主机"}>
                   <div style={{ marginTop: '20px' }}>
                     <VirtualServiceHosts
                       vsHosts={this.state.vsHosts}
@@ -931,7 +931,7 @@ export class ServiceWizard extends React.Component<ServiceWizardProps, ServiceWi
                   </div>
                 </Tab>
 
-                <Tab eventKey={1} title={'Gateways'} data-test={'Gateways'}>
+                <Tab eventKey={1} title={"网关"} data-test={'Gateways'}>
                   <div style={{ marginTop: '20px', marginBottom: '10px' }}>
                     <GatewaySelector
                       serviceName={this.props.serviceName}
@@ -945,7 +945,7 @@ export class ServiceWizard extends React.Component<ServiceWizardProps, ServiceWi
                   </div>
                 </Tab>
 
-                <Tab eventKey={2} title={'Traffic Policy'}>
+                <Tab eventKey={2} title={"流量策略"}>
                   <div style={{ marginTop: '20px', marginBottom: '10px' }}>
                     <TrafficPolicy
                       mtlsMode={this.state.trafficPolicy.mtlsMode}
@@ -967,7 +967,7 @@ export class ServiceWizard extends React.Component<ServiceWizardProps, ServiceWi
                 </Tab>
 
                 {this.props.type !== WIZARD_TCP_TRAFFIC_SHIFTING && (
-                  <Tab eventKey={3} title={'Circuit Breaker'}>
+                  <Tab eventKey={3} title={"熔断"}>
                     <div style={{ marginTop: '20px', marginBottom: '10px' }}>
                       <CircuitBreaker
                         hasConnectionPool={this.state.trafficPolicy.addConnectionPool}
@@ -987,7 +987,7 @@ export class ServiceWizard extends React.Component<ServiceWizardProps, ServiceWi
             <ExpandableSection
               className={advancedOptionsStyle}
               isExpanded={this.state.showAdvanced}
-              toggleText={`${this.state.showAdvanced ? 'Hide' : 'Show'} Advanced Options`}
+              toggleText={`${this.state.showAdvanced ? '隐藏' : '展示'} 高级选项`}
               contentId={`${this.state.showAdvanced ? 'hide' : 'show'}_advanced_options`}
               onToggle={() => {
                 this.setState({

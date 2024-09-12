@@ -71,7 +71,7 @@ export const IstioActionDropdown: React.FC<IstioActionDropdownProps> = (props: I
             onClick={() => onToggle(!dropdownOpen)}
             isExpanded={dropdownOpen}
           >
-            Actions
+            操作
           </MenuToggle>
         )}
         isOpen={dropdownOpen}

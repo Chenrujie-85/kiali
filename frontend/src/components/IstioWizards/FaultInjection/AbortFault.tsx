@@ -11,13 +11,13 @@ type Props = {
   onAbort: (aborted: boolean, abort: Abort) => void;
 };
 
-const httpStatusMsg = 'HTTP status code to use to abort the Http request.';
+const httpStatusMsg = '用于中止HTTP请求的HTTP状态码';
 
 export class AbortFault extends React.Component<Props> {
   render() {
     return (
       <>
-        <FormGroup label="Add HTTP Abort" fieldId="abortSwitch">
+        <FormGroup label="添加HTTP中止" fieldId="abortSwitch">
           <Switch
             id="abortSwitch"
             label={' '}
@@ -28,7 +28,7 @@ export class AbortFault extends React.Component<Props> {
           <span>{wizardTooltip(HTTP_ABORT_TOOLTIP)}</span>
         </FormGroup>
         {this.props.aborted && (
-          <FormGroup label="Abort Percentage" fieldId="abort-percentage">
+          <FormGroup label="中止比例" fieldId="abort-percentage">
             <TextInput
               value={this.props.abort.percentage?.value}
               id="abort-percentage"
@@ -47,13 +47,13 @@ export class AbortFault extends React.Component<Props> {
             />
             <FormHelperText>
               <HelperText>
-                <HelperTextItem>Percentage of requests to be aborted with the error code provided.</HelperTextItem>
+                <HelperTextItem>中止并提供错误状态码的请求的比例</HelperTextItem>
               </HelperText>
             </FormHelperText>
           </FormGroup>
         )}
         {this.props.aborted && (
-          <FormGroup label="HTTP Status Code" fieldId="abort-status-code">
+          <FormGroup label="HTTP状态码" fieldId="abort-status-code">
             <TextInput
               value={this.props.abort.httpStatus}
               id="abort-status-code"

@@ -28,9 +28,9 @@ type State = {
   validationMsg: string;
 };
 
-const MSG_SAME_MATCHING = 'A Rule with same matching criteria is already added.';
-const MSG_HEADER_NAME_NON_EMPTY = 'Header name must be non empty';
-const MSG_HEADER_VALUE_NON_EMPTY = 'Header value must be non empty';
+const MSG_SAME_MATCHING = '在当前的配置中，已经存在一个具有相同匹配条件的路由规则';
+const MSG_HEADER_NAME_NON_EMPTY = 'Header name 不能为空';
+const MSG_HEADER_VALUE_NON_EMPTY = 'Header value 不能为空';
 
 export class RequestRouting extends React.Component<Props, State> {
   constructor(props: Props) {

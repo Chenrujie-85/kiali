@@ -65,17 +65,17 @@ export const Rules: React.FC<RulesProps> = (props: RulesProps) => {
 
   const actionResolver = (_rowData: IRowData, rowIndex: number): IAction[] => {
     const removeAction = {
-      title: 'Remove Rule',
+      title: '删除规则',
       onClick: () => props.onRemoveRule(rowIndex)
     };
 
     const moveUpAction = {
-      title: 'Move Up',
+      title: '提升优先级',
       onClick: () => props.onMoveRule(rowIndex, MOVE_TYPE.UP)
     };
 
     const moveDownAction = {
-      title: 'Move Down',
+      title: '降低优先级',
       onClick: () => props.onMoveRule(rowIndex, MOVE_TYPE.DOWN)
     };
 
@@ -98,14 +98,14 @@ export const Rules: React.FC<RulesProps> = (props: RulesProps) => {
 
   const columns: ThProps[] = [
     {
-      title: 'Rule order',
+      title: '规则顺序',
       width: 10
     },
     {
-      title: 'Request Matching'
+      title: '请求匹配'
     },
     {
-      title: 'Route To'
+      title: '路由流量配置'
     }
   ];
 
@@ -115,8 +115,8 @@ export const Rules: React.FC<RulesProps> = (props: RulesProps) => {
 
   const noRules: React.ReactNode = (
     <EmptyState variant={EmptyStateVariant.full}>
-      <EmptyStateHeader titleText="No Route Rules defined" headingLevel="h5" />
-      <EmptyStateBody className={noRulesStyle}>A Request Routing scenario needs at least a Route Rule</EmptyStateBody>
+      <EmptyStateHeader titleText="未定义路由规则" headingLevel="h5" />
+      <EmptyStateBody className={noRulesStyle}>请求路由场景至少需要一条路由规则</EmptyStateBody>
     </EmptyState>
   );
 
@@ -128,13 +128,13 @@ export const Rules: React.FC<RulesProps> = (props: RulesProps) => {
         <>{order + 1}</>,
         <>
           {rule.matches.length === 0
-            ? 'Any request'
+            ? '所有请求'
             : rule.matches.map((match, i) => <div key={`match_${i}`}>{match}</div>)}
           {!isValid && (
             <div className={validationStyle}>
-              Match 'Any request' is defined in a previous rule.
+              之前的规则中已经定义了‘所有请求’的匹配项
               <br />
-              This rule is not accessible.
+              该规则将无法生效
             </div>
           )}
         </>,
@@ -198,7 +198,7 @@ export const Rules: React.FC<RulesProps> = (props: RulesProps) => {
   return (
     <>
       <div>
-        <span>Route Rules</span>
+        <span>路由规则表</span>
         {wizardTooltip(ROUTE_RULES_TOOLTIP)}
       </div>
 

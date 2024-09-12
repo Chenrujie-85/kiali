@@ -7,12 +7,12 @@ interface Shortcut {
 }
 
 const shortcuts: Shortcut[] = [
-  { shortcut: 'Mouse wheel', description: 'Zoom' },
-  { shortcut: 'Click + Drag', description: 'Panning' },
-  { shortcut: 'Shift + Drag', description: 'Select zoom area' },
-  { shortcut: 'Right click', description: 'Contextual menu on nodes' },
-  { shortcut: 'Single click', description: 'Details in side panel on nodes and edges' },
-  { shortcut: 'Double click', description: 'Drill into a node details graph' }
+  { shortcut: '鼠标滚轮', description: '缩放' },
+  { shortcut: '单击 + 拖动', description: '平移' },
+  { shortcut: 'Shift + 拖动', description: '选中一块区域' },
+  { shortcut: '鼠标右键', description: '节点的上下文菜单' },
+  { shortcut: '单击', description: '侧面板中边和节点的详细信息' },
+  { shortcut: '双击', description: '深入查看节点详细信息图' }
 ];
 
 const makeShortcut = (shortcut: Shortcut): JSX.Element => {

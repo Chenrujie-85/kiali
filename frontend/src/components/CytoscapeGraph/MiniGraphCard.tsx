@@ -85,7 +85,7 @@ class MiniGraphCardComponent extends React.Component<MiniGraphCardProps, MiniGra
   render(): React.ReactNode {
     const graphCardActions = [
       <DropdownItem key="viewFullGraph" onClick={this.onViewFullGraph}>
-        Show full graph
+        展示完整的流量视图
       </DropdownItem>
     ];
     if (isParentKiosk(this.props.kiosk)) {
@@ -106,7 +106,7 @@ class MiniGraphCardComponent extends React.Component<MiniGraphCardProps, MiniGra
     } else {
       graphCardActions.push(
         <DropdownItem key="viewNodeGraph" onClick={this.onViewNodeGraph}>
-          Show node graph
+          展示节点的流量视图
         </DropdownItem>
       );
     }

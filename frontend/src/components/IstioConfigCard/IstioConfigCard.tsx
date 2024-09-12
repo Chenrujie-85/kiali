@@ -77,7 +77,7 @@ export const IstioConfigCard: React.FC<IstioConfigCardProps> = (props: IstioConf
     <Card isCompact={true} id="IstioConfigCard">
       <CardHeader actions={{ actions: <></>, hasNoOffset: false }}>
         <Title headingLevel="h3" size={TitleSizes.lg}>
-          Istio Config
+          Istio配置
         </Title>
       </CardHeader>
 

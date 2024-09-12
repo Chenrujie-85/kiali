@@ -30,9 +30,9 @@ export const DISABLE = 'DISABLE';
 export const ISTIO_MUTUAL = 'ISTIO_MUTUAL';
 export const SIMPLE = 'SIMPLE';
 export const MUTUAL = 'MUTUAL';
-export const ROUND_ROBIN = 'ROUND_ROBIN';
+export const ROUND_ROBIN = '轮询';
 
-export const loadBalancerSimple: string[] = [ROUND_ROBIN, 'LEAST_CONN', 'RANDOM', 'PASSTHROUGH'];
+export const loadBalancerSimple: string[] = [ROUND_ROBIN, '最少连接', '随机', '透传'];
 
 export const mTLSMode: string[] = [UNSET, DISABLE, ISTIO_MUTUAL, SIMPLE, MUTUAL];
 
@@ -444,7 +444,7 @@ class TrafficPolicyComponent extends React.Component<Props, TrafficPolicyState> 
           </FormSelect>
           <FormHelperText>
             <HelperText>
-              <HelperTextItem>TLS related settings for connections to the upstream service.</HelperTextItem>
+              <HelperTextItem>连接到上游服务的TLS相关设置</HelperTextItem>
             </HelperText>
           </FormHelperText>
         </FormGroup>
@@ -490,7 +490,7 @@ class TrafficPolicyComponent extends React.Component<Props, TrafficPolicyState> 
             </FormGroup>
           </>
         )}
-        <FormGroup label="Add PeerAuthentication" fieldId="advanced-paSwitch">
+        <FormGroup label="添加对等身份验证" fieldId="advanced-paSwitch">
           <Switch
             id="advanced-paSwitch"
             label={' '}
@@ -514,7 +514,7 @@ class TrafficPolicyComponent extends React.Component<Props, TrafficPolicyState> 
             </FormSelect>
           </FormGroup>
         )}
-        <FormGroup label="Add LoadBalancer" fieldId="advanced-lbSwitch">
+        <FormGroup label="添加负载均衡器" fieldId="advanced-lbSwitch">
           <Switch
             id="advanced-lbSwitch"
             label={' '}
@@ -530,7 +530,7 @@ class TrafficPolicyComponent extends React.Component<Props, TrafficPolicyState> 
               <Radio
                 id="selectLBTypeSimple"
                 name="selectLBType"
-                label="Simple"
+                label="简易模式"
                 isDisabled={!this.state.addLoadBalancer}
                 isChecked={this.state.simpleLB}
                 onChange={() => this.onFormChange(TrafficPolicyForm.LB_SELECT, 'true')}
@@ -538,14 +538,14 @@ class TrafficPolicyComponent extends React.Component<Props, TrafficPolicyState> 
               <Radio
                 id="selectLBTypeConsistentHash"
                 name="selectLBType"
-                label="Consistent Hash"
+                label="一致性哈希"
                 isDisabled={!this.state.addLoadBalancer}
                 isChecked={!this.state.simpleLB}
                 onChange={() => this.onFormChange(TrafficPolicyForm.LB_SELECT, 'false')}
               />
             </FormGroup>
             {this.state.simpleLB && (
-              <FormGroup fieldId="advanced-loadbalancer" label="LoadBalancer">
+              <FormGroup fieldId="advanced-loadbalancer" label="负载均衡模式">
                 <FormSelect
                   value={this.state.loadBalancer.simple}
                   onChange={(_event, simple: string) => this.onFormChange(TrafficPolicyForm.LB_SIMPLE, simple)}
@@ -563,7 +563,7 @@ class TrafficPolicyComponent extends React.Component<Props, TrafficPolicyState> 
                 <Radio
                   id="httpHeaderName"
                   name="selectConsistentHashType"
-                  label="HTTP Header Name"
+                  label="HTTP标头"
                   isDisabled={!this.state.addLoadBalancer}
                   isChecked={this.state.consistentHashType === ConsistentHashType.HTTP_HEADER_NAME}
                   onChange={() =>
@@ -583,7 +583,7 @@ class TrafficPolicyComponent extends React.Component<Props, TrafficPolicyState> 
                 <Radio
                   id="sourceIp"
                   name="selectConsistentHashType"
-                  label="Source IP"
+                  label="源IP"
                   isDisabled={!this.state.addLoadBalancer}
                   isChecked={this.state.consistentHashType === ConsistentHashType.USE_SOURCE_IP}
                   onChange={() =>
@@ -593,7 +593,7 @@ class TrafficPolicyComponent extends React.Component<Props, TrafficPolicyState> 
               </FormGroup>
             )}
             {!this.state.simpleLB && this.state.consistentHashType === ConsistentHashType.HTTP_HEADER_NAME && (
-              <FormGroup label="HTTP Header Name" fieldId="httpHeaderName" disabled={!this.state.addLoadBalancer}>
+              <FormGroup label="HTTP标头" fieldId="httpHeaderName" disabled={!this.state.addLoadBalancer}>
                 <TextInput
                   value={
                     this.state.loadBalancer.consistentHash && this.state.loadBalancer.consistentHash.httpHeaderName

@@ -200,7 +200,7 @@ const ServiceWizardDropdownComponent: React.FC<Props> = (props: Props) => {
 
   const hasMeshWorkloads = checkHasMeshWorkloads();
   const toolTipMsgActions = !hasMeshWorkloads
-    ? 'There are not Workloads with sidecar for this service'
+    ? '此服务没有具有sidecar的工作负载'
     : 'There are not Workloads with ' + appLabelName + ' and ' + versionLabelName + ' labels';
 
   const validWorkloads = getValidWorkloads();
@@ -219,7 +219,7 @@ const ServiceWizardDropdownComponent: React.FC<Props> = (props: Props) => {
           isExpanded={isActionsOpen}
           isDisabled={!validActions}
         >
-          Actions
+          操作
         </MenuToggle>
       )}
       isOpen={isActionsOpen}

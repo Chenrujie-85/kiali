@@ -24,7 +24,7 @@ const GraphResetComponent: React.FC<GraphResetProps> = (props: GraphResetProps) 
   };
 
   return (
-    <Tooltip key="factory_reset_settings" position="bottom" content="Reset to factory settings">
+    <Tooltip key="factory_reset_settings" position="bottom" content="重置为出厂设置">
       <Button
         id="graph-factory-reset"
         className={resetStyle}
@@ -33,7 +33,7 @@ const GraphResetComponent: React.FC<GraphResetProps> = (props: GraphResetProps) 
         isInline
       >
         <KialiIcon.ResetSettings />
-        <span style={{ marginLeft: '5px' }}>Reset</span>
+        <span style={{ marginLeft: '5px' }}>重置</span>
       </Button>
     </Tooltip>
   );

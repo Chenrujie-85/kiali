@@ -131,11 +131,11 @@ class WorkloadDetailsPageComponent extends React.Component<WorkloadDetailsPagePr
         });
       })
       .catch(error => {
-        AlertUtils.addError('Could not fetch Workload.', error);
+        AlertUtils.addError('无法获取到工作负载状态', error);
 
         const msg: ErrorMsg = {
-          title: 'No Workload is selected',
-          description: `${this.props.workloadId.workload} is not found in the mesh`
+          title: '没有工作负载被选择',
+          description: `${this.props.workloadId.workload}在mesh中未被找到`
         };
 
         this.setState({ error: msg });
@@ -147,7 +147,7 @@ class WorkloadDetailsPageComponent extends React.Component<WorkloadDetailsPagePr
     const tabsArray: JSX.Element[] = [];
 
     const overTab = (
-      <Tab title="Overview" eventKey={0} key="Overview">
+      <Tab title="总览" eventKey={0} key="Overview">
         <WorkloadInfo
           workload={this.state.workload}
           duration={this.props.duration}
@@ -160,7 +160,7 @@ class WorkloadDetailsPageComponent extends React.Component<WorkloadDetailsPagePr
     tabsArray.push(overTab);
 
     const trafficTab = (
-      <Tab title="Traffic" eventKey={1} key="Traffic">
+      <Tab title="流量" eventKey={1} key="Traffic">
         <TrafficDetails
           itemName={this.props.workloadId.workload}
           itemType={MetricsObjectTypes.WORKLOAD}
@@ -174,7 +174,7 @@ class WorkloadDetailsPageComponent extends React.Component<WorkloadDetailsPagePr
 
     if (!serverConfig.kialiFeatureFlags.disabledFeatures?.includes('logs-tab')) {
       const logTab = (
-        <Tab title="Logs" eventKey={2} key="Logs" data-test="workload-details-logs-tab">
+        <Tab title="日志" eventKey={2} key="Logs" data-test="workload-details-logs-tab">
           {hasPods ? (
             <WorkloadPodLogs
               lastRefreshAt={this.props.lastRefreshAt}
@@ -198,7 +198,7 @@ class WorkloadDetailsPageComponent extends React.Component<WorkloadDetailsPagePr
     }
 
     const inTab = (
-      <Tab title="Inbound Metrics" eventKey={3} key="Inbound Metrics">
+      <Tab title="入站指标" eventKey={3} key="Inbound Metrics">
         <IstioMetrics
           data-test="inbound-metrics-component"
           lastRefreshAt={this.props.lastRefreshAt}
@@ -213,7 +213,7 @@ class WorkloadDetailsPageComponent extends React.Component<WorkloadDetailsPagePr
     tabsArray.push(inTab);
 
     const outTab = (
-      <Tab title="Outbound Metrics" eventKey={4} key="Outbound Metrics">
+      <Tab title="出站指标" eventKey={4} key="Outbound Metrics">
         <IstioMetrics
           data-test="outbound-metrics-component"
           lastRefreshAt={this.props.lastRefreshAt}
@@ -229,7 +229,7 @@ class WorkloadDetailsPageComponent extends React.Component<WorkloadDetailsPagePr
 
     if (this.props.tracingInfo && this.props.tracingInfo.enabled && this.props.tracingInfo.integration) {
       tabsArray.push(
-        <Tab eventKey={5} title="Traces" key="Traces">
+        <Tab eventKey={5} title="分布式追踪" key="Traces">
           <TracesComponent
             lastRefreshAt={this.props.lastRefreshAt}
             namespace={this.props.workloadId.namespace}

@@ -33,10 +33,10 @@ export class Matches extends React.Component<Props> {
             marginRight: '32px'
           }}
         >
-          Matching selected
+          已选择的匹配规则
           {wizardTooltip(MATCHING_SELECTED_TOOLTIP)}
         </span>
-        {matches.length > 0 ? matches : <b>Match any request</b>}
+        {matches.length > 0 ? matches : <b>匹配所有请求</b>}
       </div>
     );
   }

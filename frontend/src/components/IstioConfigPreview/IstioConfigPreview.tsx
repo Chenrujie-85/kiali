@@ -204,10 +204,11 @@ export class IstioConfigPreview extends React.Component<Props, State> {
                   onClick={this.onConfirm}
                   data-test={this.props.opTarget}
                 >
-                  {this.props.opTarget && this.props.opTarget[0].toUpperCase() + this.props.opTarget.substr(1)}
+                  {this.props.opTarget === 'update' ? '更新' : '创建'}
+                  {/*{this.props.opTarget && this.props.opTarget[0].toUpperCase() + this.props.opTarget.substr(1)}*/}
                 </Button>,
                 <Button key="cancel" variant={ButtonVariant.secondary} onClick={this.props.onClose}>
-                  Cancel
+                  取消
                 </Button>
               ]
         }
@@ -219,17 +220,17 @@ export class IstioConfigPreview extends React.Component<Props, State> {
             })}
           >
             <ToolbarItem>
-              <Tooltip content={<>Copy all resources</>}>
+              <Tooltip content={<>复制所有资源</>}>
                 <CopyToClipboard text={this.trafficToText()}>
                   <Button variant={ButtonVariant.link} aria-label="Copy" isInline>
                     <KialiIcon.Copy />
-                    <span className={iconStyle}>Copy</span>
+                    <span className={iconStyle}>复制</span>
                   </Button>
                 </CopyToClipboard>
               </Tooltip>
             </ToolbarItem>
             <ToolbarItem>
-              <Tooltip content={<>Download all resources in a file</>}>
+              <Tooltip content={<>下载所有资源到一个文件中</>}>
                 <Button
                   variant={ButtonVariant.link}
                   isInline
@@ -238,7 +239,7 @@ export class IstioConfigPreview extends React.Component<Props, State> {
                   onClick={() => this.downloadTraffic()}
                 >
                   <KialiIcon.Download />
-                  <span className={iconStyle}>Download</span>
+                  <span className={iconStyle}>下载</span>
                 </Button>
               </Tooltip>
             </ToolbarItem>
@@ -256,7 +257,7 @@ export class IstioConfigPreview extends React.Component<Props, State> {
         )}
         {this.props.disableAction && (
           <div className={kialiStyle({ color: PFColors.Danger })}>
-            User does not have enough permission for this action.
+            用户没有足够的权限来执行这项操作
           </div>
         )}
       </Modal>

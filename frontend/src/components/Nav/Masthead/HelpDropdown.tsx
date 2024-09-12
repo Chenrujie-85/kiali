@@ -56,21 +56,21 @@ const HelpDropdownComponent: React.FC<HelpDropdownProps> = (props: HelpDropdownP
 
   items.push(
     <DropdownItem key={'view_debug_info'} onClick={() => setIsDebugInformationOpen(true)}>
-      View Debug Info
+      查看Debug信息
     </DropdownItem>
   );
 
   if (serverConfig.kialiFeatureFlags.certificatesInformationIndicators.enabled) {
     items.push(
       <DropdownItem key={'view_certs_info'} onClick={() => setIsCertsInformationOpen(true)}>
-        View Certificates Info
+        查看证书信息
       </DropdownItem>
     );
   }
 
   items.push(
     <DropdownItem key={'view_about_info'} onClick={() => setIsAboutModalOpen(true)}>
-      About
+      关于kiali
     </DropdownItem>
   );
 

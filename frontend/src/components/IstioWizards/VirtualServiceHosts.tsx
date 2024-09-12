@@ -34,7 +34,7 @@ export class VirtualServiceHosts extends React.Component<Props> {
     const vsHosts = this.props.vsHosts.length > 0 ? this.props.vsHosts.join(',') : '';
     return (
       <Form isHorizontal={true}>
-        <FormGroup label="VirtualService Hosts" fieldId="advanced-vshosts">
+        <FormGroup label="虚拟服务主机" fieldId="advanced-vshosts">
           <TextInput
             value={vsHosts}
             id="advanced-vshosts"
@@ -49,7 +49,7 @@ export class VirtualServiceHosts extends React.Component<Props> {
             <HelperText>
               <HelperTextItem>
                 {isValid(this.isVirtualServiceHostsValid(this.props.vsHosts))
-                  ? 'The destination hosts to which traffic is being sent. Enter one or multiple hosts separated by comma.'
+                  ? '发送流量时的目标主机，输入一个或多个主机，以逗号分隔'
                   : "VirtualService Host '*' wildcard not allowed on mesh gateway."}
               </HelperTextItem>
             </HelperText>

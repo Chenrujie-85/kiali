@@ -26,20 +26,20 @@ export const IstioActionButtons: React.FC<Props> = (props: Props) => {
         {!props.readOnly && (
           <span style={{ paddingRight: '0.25rem' }}>
             <Button variant={ButtonVariant.primary} isDisabled={!props.canUpdate} onClick={props.onUpdate}>
-              Save
+              保存
             </Button>
           </span>
         )}
 
         <span style={{ paddingRight: '0.25rem' }}>
           <Button variant={ButtonVariant.secondary} onClick={handleRefresh}>
-            Reload
+            重新加载
           </Button>
         </span>
 
         <span style={{ paddingRight: '0.25rem' }}>
           <Button variant={ButtonVariant.secondary} onClick={props.onCancel}>
-            {props.readOnly ? 'Close' : 'Cancel'}
+            {props.readOnly ? '关闭' : '取消'}
           </Button>
         </span>
       </span>
@@ -48,7 +48,7 @@ export const IstioActionButtons: React.FC<Props> = (props: Props) => {
         <span style={{ float: 'right', padding: '0.5rem' }}>
           <span style={{ paddingLeft: '0.25rem' }}>
             <Button variant={ButtonVariant.link} onClick={props.onOverview}>
-              {props.overview ? 'Close Overview' : 'Show Overview'}
+              {props.overview ? '关闭总览' : '显示总览'}
             </Button>
           </span>
         </span>

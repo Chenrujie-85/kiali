@@ -134,7 +134,7 @@ export class EmptyGraphLayout extends React.Component<EmptyGraphLayoutProps, Emp
               onClick={this.props.showIdleNodes ? this.props.action : this.props.toggleIdleNodes}
               variant={ButtonVariant.primary}
             >
-              {(this.props.showIdleNodes && <>Refresh</>) || <>Display idle nodes</>}
+              {(this.props.showIdleNodes && <>Refresh</>) || <>展示空闲节点</>}
             </Button>
           </EmptyStateFooter>
         </EmptyState>

@@ -49,7 +49,7 @@ export interface GraphLegendItemRow {
 
 export const legendData: GraphLegendItem[] = [
   {
-    title: t('节点形状'),
+    title: '节点形状',
     data: [
       { label: t('工作负载'), icon: workloadImage },
       { label: t('应用'), icon: appImage },
@@ -59,7 +59,7 @@ export const legendData: GraphLegendItem[] = [
     ]
   },
   {
-    title: t('节点颜色'),
+    title: '节点颜色',
     data: [
       { label: t('正常'), icon: nodeColorNormalImage },
       { label: t('警告'), icon: nodeColorWarningImage },
@@ -68,14 +68,14 @@ export const legendData: GraphLegendItem[] = [
     ]
   },
   {
-    title: t('节点背景'),
+    title: '节点背景',
     data: [
       { label: t('未选择的命名空间'), icon: externalNamespaceImage },
       { label: t('受限 / 外部'), icon: restrictedNamespaceImage }
     ]
   },
   {
-    title: t('边'),
+    title: '边',
     data: [
       { label: t('错误'), icon: edgeDangerImage },
       { label: t('已降级'), icon: edgeWarnImage },
@@ -86,7 +86,7 @@ export const legendData: GraphLegendItem[] = [
     ]
   },
   {
-    title: t('流量动画'),
+    title: '流量动画',
     data: [
       { label: t('正常请求'), icon: trafficNormalImage },
       { label: t('失败请求'), icon: trafficFailedImage },
@@ -94,7 +94,7 @@ export const legendData: GraphLegendItem[] = [
     ]
   },
   {
-    title: t('节点标志'),
+    title: '节点标志',
     isBadge: true,
     data: [
       { label: t('熔断'), icon: badgeCircuitBreakerImage },
